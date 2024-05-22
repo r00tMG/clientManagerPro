@@ -1,14 +1,16 @@
 <?php
 require_once 'api/auth/functions.php';
 require_once 'api/auth/config.php';
+session_start();
 // isConnect();
-// if(empty($_SESSION['users'])){
-// redirect_to_login();
-// }else{
-//     isConnect();
-// }
+if(empty($_SESSION['users'])){
+redirect_to_login();
+}else{
+    isConnect();
+}
 // echo '<pre>';
-// var_dump($_SESSION);
+var_dump($_SESSION);
+var_dump(isConnect());
 // echo '<pre>';
 // unset($_SESSION['users']);
 // unset($_SESSION['user']);

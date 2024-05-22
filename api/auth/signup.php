@@ -1,17 +1,7 @@
 <?php
       require_once '../users/create_user.php';
-      if(!empty($_POST['pseudo']) && !empty($_POST['password']) && $_SERVER['REQUEST_METHOD']==="POST"){
         $user = creat_users();
-        $success = "";
-        $error = "";
-        if($user){
-          $success = "Votre inscription est réussie";
-        }else{
-          $error = "Veulliez respectez les données exigées";
         
-        }
-
-      var_dump($user);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +17,7 @@
     
 <!-- Menu -->
 <?php
- require_once '../../menu.php' 
+//  require_once '../../menu.php' 
  ?>    
     <!-- Fin menu -->
 
@@ -35,25 +25,21 @@
   <div class="row mt-5">
     <form action="" method="POST" class="row g-3">
       <h3 class="text-center">S'inscrire</h3>
-      <?php
+<?php
+      // if($user!==null){
+      //   echo  
+      //   '<div class="alert alert-success">
+      //       <p>Votre inscription est réussie</p>
+      //   </div>';
+      // }else{
+      //   echo  
+      //   '<div class="alert alert-success">
+      //               <p>Veulliez respectez les données exigées</p>
+      //   </div>';
 
-// var_dump($_POST);
-
-      if($success){
-        echo  
-        '<div class="alert alert-success">
-                  '.$success.'
-        </div>';
-      }else{
-        echo  
-        '<div class="alert alert-success">
-                    '.$error.'
-        </div>';
-
-      }
-    }
-  
-  ?>
+      // }
+    
+?>
       <div class="col-md-6">
         <input type="email" class="form-control" name="pseudo" placeholder="exemple@gmail.com">
       </div>

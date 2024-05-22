@@ -3,25 +3,30 @@
 require_once 'config.php';
 require_once '../users/read_user.php';
 $users = read_user();
-
+// echo '<pre>';
+// var_dump($users);
+// echo '</pre>';
 $error = null;
 for($i=0; $i<count($users); $i++){
-
 if(isset($_POST['pseudo'],$_POST['password']) && $_SERVER['REQUEST_METHOD']==="POST"){
   $username = $_POST['pseudo'];
   $password = $_POST['password'];
 
-  $hash = password_hash($users[$i]['password'],PASSWORD_BCRYPT,['cost'=>12]);
-  if($users[$i]['pseudo'] === $username && password_verify($password,$hash)){
+  // $hash = password_hash($users[$i]['password'],PASSWORD_BCRYPT,['cost'=>12]);
+  if($users[$i]['pseudo'] === $username && password_verify($password,$users[$i]['password'])){
       session_start();
       $_SESSION['users']=$users[$i]['pseudo'];
       header('location: ../../index.php');
-      // exit();
+      exit();
   }else{
     $error="Veuillez verifier vos informations";
   }
 }
 }
+// if(isConnect()){
+//   header('location: ../../index.php');
+//   die();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">

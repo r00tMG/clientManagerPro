@@ -32,7 +32,7 @@
                             <input type="text" name="email" id="" placeholder="Email" class="form-control">
                         </div>
                         <div class="mb-2">
-                            <input type="text" name="phone" id="" placeholder="Phone" class="form-control">
+                            <input type="number" name="phone" id="" placeholder="Phone" class="form-control">
                         </div>
                         <div class="mb-2">
                             <input type="text" name="status" id="" placeholder="Status" class="form-control">
