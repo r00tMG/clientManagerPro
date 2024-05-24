@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg bg-body-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Navbar</a>
+    <a class="navbar-brand" href="/">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -54,9 +54,18 @@
         </div>
           <!-- </a> -->
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li> -->
+        <li class="nav-item">
+        <?php if( isset($_SESSION['users']) && $_SESSION['users'][0] === "meissagningue7@gmail.com" ){
+          // var_dump($_SESSION['users']);
+          echo '
+              <a type="button" href="admin.php" class="nav-link active " >
+                Admin
+              </a>
+          ';
+
+        }
+        ?>
+        </li>
         
       </ul>
       <style>

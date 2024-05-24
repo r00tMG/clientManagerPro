@@ -24,16 +24,16 @@ function creat_users(){
                     // var_dump(key_exists($extension,$allowed) || in_array($filetype,$allowed));
                     if(key_exists($extension,$allowed) || in_array($filetype,$allowed)){
                         $dossier='uploads';
-                        if(!is_dir($dossier)){
-                            mkdir(__DIR__.DIRECTORY_SEPARATOR.$dossier,0777,true);
-                            die();
-                        }
+                        // if(!is_dir($dossier)){
+                            // mkdir(__DIR__.DIRECTORY_SEPARATOR.$dossier,0777,true);
+                            // die();
+                        // }
                         
                         $newName = md5(uniqid());
                         $newfileName = __DIR__.DIRECTORY_SEPARATOR.$dossier.DIRECTORY_SEPARATOR.$newName.'.'.$extension;
                         $moveFile = move_uploaded_file($profile_image['tmp_name'],$newfileName);
                         if($moveFile){
-                            echo '<script class="bg-success">alert("Votre compte a été créer avec succer")</script>';
+                            echo '<script class="bg-success">alert("Votre compte a été créer avec succés")</script>';
                         }else{
                             echo 'File not upload';
                         }

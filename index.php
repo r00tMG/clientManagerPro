@@ -9,7 +9,7 @@ redirect_to_login();
     isConnect();
 }
 // echo '<pre>';
-// var_dump($_SESSION);
+// var_dump($_SESSION['users'][0]);
 // var_dump(isConnect());
 // echo '<pre>';
 // unset($_SESSION['users']);
