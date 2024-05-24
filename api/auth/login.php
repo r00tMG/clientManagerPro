@@ -15,7 +15,10 @@ if(isset($_POST['pseudo'],$_POST['password']) && $_SERVER['REQUEST_METHOD']==="P
   // $hash = password_hash($users[$i]['password'],PASSWORD_BCRYPT,['cost'=>12]);
   if($users[$i]['pseudo'] === $username && password_verify($password,$users[$i]['password'])){
       session_start();
-      $_SESSION['users']=$users[$i]['pseudo'];
+      $_SESSION['users']=[
+        $users[$i]['pseudo'],
+        $users[$i]['profile_image']
+      ];
       header('location: ../../index.php');
       exit();
   }else{

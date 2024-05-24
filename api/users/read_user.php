@@ -6,5 +6,3 @@ function read_user(){
     $users = $response->fetchAll(PDO::FETCH_ASSOC);
     return $users;
 }
-// $users = read_user();
-// var_dump($users);

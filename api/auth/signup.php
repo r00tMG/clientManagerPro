@@ -23,22 +23,10 @@
 
 <div class="container mt-5 p-5 w-50 bg-light rounded">
   <div class="row mt-5">
-    <form action="" method="POST" class="row g-3">
+    <form action="" method="POST" class="row g-3" enctype="multipart/form-data">
       <h3 class="text-center">S'inscrire</h3>
 <?php
-      // if($user!==null){
-      //   echo  
-      //   '<div class="alert alert-success">
-      //       <p>Votre inscription est réussie</p>
-      //   </div>';
-      // }else{
-      //   echo  
-      //   '<div class="alert alert-success">
-      //               <p>Veulliez respectez les données exigées</p>
-      //   </div>';
-
-      // }
-    
+      // var_dump($_FILES)
 ?>
       <div class="col-md-6">
         <input type="email" class="form-control" name="pseudo" placeholder="exemple@gmail.com">
@@ -46,10 +34,10 @@
       <div class="col-md-6">
         <input type="password" class="form-control" name="password" placeholder="Password">
       </div>
-      <!-- <div class="col-md-6">
-        <input type="file" class="form-control" name="image" placeholder="">
+      <div class="col-md-6">
+        <input type="file" class="form-control" name="profile_image" placeholder="">
       </div>
-       -->
+      
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Sign in</button>
       </div>
